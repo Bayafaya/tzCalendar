@@ -1,0 +1,59 @@
+.cell {
+    position: relative;
+    display: inline-block;
+    border: 1px solid white;
+    width: 17px;
+    height: 17px;
+    background: #ededed;
+    cursor: pointer;
+  }
+  .cell.selected{
+    border-color: black;
+  }
+  
+  .cell:hover {
+    border-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .cell:hover .tooltiptext {
+    visibility: visible;
+  }
+  
+  .cell .tooltiptext {
+    visibility: hidden;
+    width: 140px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 3px;
+    padding: 6px 8px;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%;
+    left: 50%;
+    margin-left: -70px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    pointer-events: none;
+  }
+
+  
+  .cell .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+  }
+  
+  .cell .tooltiptext div {
+    font-size: 12px;
+  }
+  .cell .tooltiptext span {
+    font-size: 10px;
+    color: #7c7c7c;
+  }

@@ -1,0 +1,25 @@
+main {
+  display: flex;
+  justify-content: center;
+  padding: 60px;
+}
+
+.mainBoard {
+  display: grid;
+  gap: 0;
+  grid-template-columns: repeat(51, 17px);
+  grid-template-rows: repeat(7, 17px);
+  margin: 6px;
+  grid-auto-flow: column;
+}
+
+.weekday{
+  list-style: none;
+  margin: 6px 0;
+}
+.weekday li{
+  height: 17px;
+  color: #959494; 
+  text-align: center;
+  font-size: 12px; 
+}
