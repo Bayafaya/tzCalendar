@@ -2,6 +2,7 @@ main {
   display: flex;
   justify-content: center;
   padding: 60px;
+  position: relative;
 }
 
 .mainBoard {
@@ -11,6 +12,7 @@ main {
   grid-template-rows: repeat(7, 17px);
   margin: 6px;
   grid-auto-flow: column;
+  
 }
 
 .weekday{
@@ -18,6 +20,22 @@ main {
   margin: 6px 0;
 }
 .weekday li{
+  height: 17px;
+  color: #959494; 
+  text-align: center;
+  font-size: 12px; 
+}
+
+.month{
+  position: absolute;
+  list-style: none;
+  margin: 6px 0;
+  display: flex; 
+  justify-content: space-between;
+  width: 850px;
+  top: 40px;
+}
+.month li{
   height: 17px;
   color: #959494; 
   text-align: center;

@@ -42,11 +42,11 @@ function GridCell({contributionsData}) {
 
   return (
     <div 
-     className={selected ? `cell selected tooltiptextOn` :  `cell`}
+     className={selected ? `cell selected` :  `cell`}
      style={contributionsData ? {backgroundColor: handleContributionsCountColor(contributionsData.countOfContributions)} : {backgroundColor: handleContributionsCountColor(0)}}
      onClick={()=>setSelected(!selected)}
     >
-      <span className="tooltiptext"> <div>{contributionsData ? contributionsData.countOfContributions : 0} contributions</div>  <span>{contributionsData ? formatRussianDate(contributionsData.date) : ''}</span> </span>
+      <span className={selected ? `tooltiptext tooltiptextOn` :  `tooltiptext`}> <div>{contributionsData ? contributionsData.countOfContributions : 0} contributions</div>  <span>{contributionsData ? formatRussianDate(contributionsData.date) : ''}</span> </span>
     </div>
   )
 }

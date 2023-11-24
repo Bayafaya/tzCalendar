@@ -48,14 +48,14 @@ function getRussianMonthList(startDateString) {
   const monthList = [];
   for (let year = startYear; year <= new Date().getFullYear(); year++) {
       for (let month = (year === startYear) ? startMonth : 1; month <= 12; month++) {
-          monthList.push(`${monthsInRussian[month]}`);
+          monthList.push(`${monthsInRussian[month].substr(0, 3)}.`);
       }
   }
-
+  monthList.pop()
   return monthList;
 }
 const listOfOrderedMonth =  getRussianMonthList(lastFiftyWeeks)
-console.log(listOfOrderedMonth);
+
 function previousDay(dateString) {
     const [year, month, day, dayOfWeek] = dateString.split('-').map(Number);
 
@@ -154,12 +154,14 @@ function previousDay(dateString) {
           <li></li>
           <li></li>
         </ul>
-
         <div className="mainBoard">
           {wholeTime.map((item, index) => (
             <GridCell key={index} contributionsData={item}></GridCell>
           ))}
         </div>
+        <ul className="month">
+         {listOfOrderedMonth.map((item,index) =><li key={index}>{item}</li>)}
+        </ul>
       </main>
     </>
   );
